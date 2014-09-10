@@ -1,0 +1,3 @@
+usr/lib/pkgconfig/mono-addins.pc				/usr/lib/pkgconfig/
+usr/lib/pkgconfig/mono-addins-setup.pc				/usr/lib/pkgconfig/
+debian/mono-addins-cecilreflector.pc				/usr/lib/pkgconfig/

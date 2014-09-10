@@ -1,0 +1,24 @@
+From: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
+Date: Tue, 2 Aug 2011 14:31:49 +0100
+Subject: fix_mono-addins-msbuild.pc.patch
+
+===================================================================
+---
+ Mono.Addins.MSBuild/mono-addins-msbuild.pc.in |    3 +--
+ 1 files changed, 1 insertions(+), 2 deletions(-)
+
+diff --git a/Mono.Addins.MSBuild/mono-addins-msbuild.pc.in b/Mono.Addins.MSBuild/mono-addins-msbuild.pc.in
+index c6e146a..f1f1e5d 100644
+--- a/Mono.Addins.MSBuild/mono-addins-msbuild.pc.in
++++ b/Mono.Addins.MSBuild/mono-addins-msbuild.pc.in
+@@ -1,8 +1,7 @@
+ prefix=${pcfiledir}/../..
+ exec_prefix=${prefix}
+-pkglibdir=${prefix}/lib/mono/@PACKAGE@
++pkglibdir=${prefix}/lib/cli/Mono.Addins.MSBuild-#PACKAGE_ABI_VERSION#
+ 
+-Libraries=${pkglibdir}/@MONO_ADDINS_MSBUILD_DEFAULT_LIB@
+ 
+ Name: Mono.Addins.MSBuild
+ Description: 
+-- 

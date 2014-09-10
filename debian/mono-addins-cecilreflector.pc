@@ -1,0 +1,10 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+pkglibdir=${prefix}/lib/cli/Mono.Addins.CecilReflector-0.2
+
+
+Name: Mono.Addins.CecilReflector
+Description: 
+Version: 1.0
+
+Libs:  -r:${pkglibdir}/Mono.Addins.CecilReflector.dll

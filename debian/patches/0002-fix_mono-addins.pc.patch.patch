@@ -1,0 +1,34 @@
+From: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
+Date: Tue, 2 Aug 2011 14:31:49 +0100
+Subject: fix_mono-addins.pc.patch
+
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## fix_mono-addins-gui.pc.dpatch by Mirco Bauer <meebey@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+---
+ Mono.Addins/mono-addins.pc.in |    4 +---
+ 1 files changed, 1 insertions(+), 3 deletions(-)
+
+diff --git a/Mono.Addins/mono-addins.pc.in b/Mono.Addins/mono-addins.pc.in
+index 2d098ca..11f4f73 100644
+--- a/Mono.Addins/mono-addins.pc.in
++++ b/Mono.Addins/mono-addins.pc.in
+@@ -1,12 +1,10 @@
+ prefix=${pcfiledir}/../..
+ exec_prefix=${prefix}
+-pkglibdir=${prefix}/lib/mono/@PACKAGE@
++pkglibdir=${prefix}/lib/cli/Mono.Addins-#PACKAGE_ABI_VERSION#
+ 
+-Libraries=${pkglibdir}/@MONO_ADDINS_DEFAULT_LIB@
+ 
+ Name: Mono.Addins
+ Description: 
+ Version: @VERSION@
+ 
+-Requires: 
+ Libs:  -r:${pkglibdir}/@MONO_ADDINS_DEFAULT_LIB@
+-- 

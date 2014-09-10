@@ -1,0 +1,403 @@
+mono-addins (1.1-0xamarin1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jo Shields <jo.shields@xamarin.com>  Wed, 10 Sep 2014 11:51:55 +0100
+
+mono-addins (1.0+git20130406.adcd75b-3) unstable; urgency=low
+
+  * [1c8ed63] Add CecilReflector pcfile
+
+ -- Jo Shields <directhex@apebox.org>  Thu, 10 Oct 2013 17:07:14 +0200
+
+mono-addins (1.0+git20130406.adcd75b-2) unstable; urgency=low
+
+  * Upload to Unstable
+
+ -- Jo Shields <directhex@apebox.org>  Thu, 10 Oct 2013 16:00:00 +0200
+
+mono-addins (1.0+git20130406.adcd75b-1) experimental; urgency=low
+
+  * [369ec9c] Imported Upstream version 1.0+git20130406.adcd75b
+  * [4e90041] Require at least mono-devel 2.8, due to .NET 4.0 assumptions
+  * [07be9a9] Include policy files for 0.6 ABI, as we have a new 1.0 ABI
+  * [39e565c] Remove obsolete patch 0001-configurable_compiler.patch.patch
+  * [2a56c39] Remove obsolete patch 
+    automake_1.11.2_pkglibdir_workaround.patch
+  * [b24d77f] Remove obsolete patch 
+    debian/patches/use-microsoft-build-utilities-4.0
+  * [889f2fd] Bump API version to 1.0
+
+ -- Jo Shields <directhex@apebox.org>  Fri, 26 Apr 2013 17:23:28 +0100
+
+mono-addins (0.6.2-2) unstable; urgency=low
+
+  * [187e884] Correct order of dh arguments
+  * [c8a1da2] Update debian/rules for DH8-compatible "--with cli"
+  * [a797178] Add a workaround for Autpmake 1.11.2's insistance 
+    that you can't store SCRIPTS in pkglibdir
+  * [32bd46f] Add patch from Iain Lane to use the correct version 
+    of Microsoft.Build.Utilities
+
+ -- Jo Shields <directhex@apebox.org>  Mon, 23 Jan 2012 01:12:31 +0000
+
+mono-addins (0.6.2-1) unstable; urgency=low
+
+  [ Julian Taylor ]
+  * [96a5719] match -msbuild-cil-dev and -gui-cil-dev depends to their pkg-config files
+    both Require the pkg-config file from libmono-addins-cil-dev and
+    libmono-addins-gui-cil-dev needs the file from libgtk2.0-cil-dev
+
+  [ Iain Lane ]
+  * [e9b2141] Imported Upstream version 0.6.2
+  * [7fd2e8a] Remove patch applied upstream
+
+ -- Iain Lane <laney@debian.org>  Thu, 03 Nov 2011 03:03:42 +0000
+
+mono-addins (0.6.1-2) unstable; urgency=high
+
+  * urgency=high for RC bug fix
+  * [30fe70d] Cherry-pick patch to fix crash when looking for addin description.
+    Thanks to Andrés G. Aragoneses <knocte@gmail.com> (Closes: #630590)
+  * [cba0471] Fix version on debhelper BD to guarantee override support
+
+ -- Iain Lane <laney@debian.org>  Tue, 02 Aug 2011 17:30:27 +0100
+
+mono-addins (0.6.1-1) unstable; urgency=low
+
+  * [bdc09da] Imported Upstream version 0.6.1
+    + Correctly initialises adidnInfoInstalled in the addin manager (Closes:
+      #629152)
+  * [2832c45] Remove obsolete fix_addin_scan patch from tree
+  * [297aae5] Remove portion of fix_mono-addins-msbuild.pc.patch applied upstream
+  * [3d60321] Standards-Version → 3.9.2, no changes required
+  * [e6c491d] Remove libmono BD
+
+ -- Iain Lane <laney@debian.org>  Sun, 05 Jun 2011 11:38:36 +0100
+
+mono-addins (0.6-2) unstable; urgency=low
+
+  * Upload to Unstable
+
+ -- Jo Shields <directhex@apebox.org>  Mon, 25 Apr 2011 11:11:33 +0100
+
+mono-addins (0.6-1) experimental; urgency=low
+
+  * [fde2323] Imported Upstream version 0.6
+  * [23be1be] Update copyright for 0.6 release
+  * [f814815] Update install files to include new policy files
+  * [2d74e13] Bump API version to 0.6
+  * [bdb2929] Convert to using Quilt via DebSrc 3.0
+  * [b151a30] Remove obsolete patch
+    debian/patches/fix_ExtensionNodeChildAttribute_ctor_r127062.patch
+  * [c413eee] Remove obsolete patch
+    debian/patches/fix_gac_policy_filenames.patch
+  * [29933d9] Bump Standards version to latest (3.9.1)
+  * [7343f4c] Switch to full DH7, with dh-autoreconf and DebSrc3 for
+    patching
+  * [9587aa5] Remove obsolete debian/patches/fix_configure.ac.patch
+    patch
+  * [b6f73f9] Add MSBuild task library
+  * [a28d839] Update debian/patches/configurable_compiler.patch to deal
+    with changes in upstream build system
+  * [e5e0f7f] Update debian/patches/fix_mono-addins.pc.patch to reflech
+    minor changes in upstream build system
+  * [23db5e0] Update debian/patches/fix_mono-addins-gui.pc.patch to
+    reflect minor changes to upstream build system
+  * [2e7ffea] Update debian/patches/fix_mono-addins-setup.pc.patch to
+    reflech minor changes to upstream build system
+  * [91108f7] Remove obsolete patch
+    debian/patches/fix_gac_policy_filenames.patch
+  * [efc586f] Add new patch debian/patches/fix_mono-addins-
+    msbuild.pc.patch to debianize pkg-config file for MSBuild assembly
+  * [af42a84] Include fix from upstream commit 766850a66a22f09911a6 to
+    prevent fault MSBuild pcfile
+
+ -- Jo Shields <directhex@apebox.org>  Mon, 14 Mar 2011 18:50:01 +0000
+
+mono-addins (0.4-8) unstable; urgency=medium
+
+  * Rebuild of 0.4-7 which doesn't introduce a dependency on Mono from
+    Debian Experimental
+
+ -- Jo Shields <directhex@apebox.org>  Tue, 10 Aug 2010 13:43:50 +0100
+
+mono-addins (0.4-7) unstable; urgency=medium
+
+  * Moved deleting obsolete policy files code from postinst to preinst to
+    catch more cases of failing upgrades. (Closes: #547137)
+  * Fixed typos and removed unneeded words from package descriptions.
+    (thanks to Martin Eberhard Schauer for the patch, Closes: #567826)
+
+ -- Mirco Bauer <meebey@debian.org>  Sat, 07 Aug 2010 18:04:51 +0200
+
+mono-addins (0.4-6) unstable; urgency=low
+
+  * debian/control:
+    + No-change bump to Standards 3.8.3
+    + Use GTK#'s -cil-dev packages
+  * debian/libmono-addins-gui-cil-dev.install,
+    debian/libmono-addins-cil-dev.install,
+    debian/libmono-addins-gui0.2-cil.install,
+    debian/libmono-addins0.2-cil.install,
+    debian/control:
+    + Create unversioned -dev packages containing pkg-config files
+  * debian/mono-addins-utils.install,
+    debian/mono-addins-utils.manpages,
+    debian/control:
+    + Move mautil into its own "app" package - it doesn't belong inside
+      a library package
+  * debian/libmono-addins0.2-cil.install,
+    debian/libmono-addins0.2-cil.installcligac,
+    debian/libmono-addins-gui0.2-cil.install,
+    debian/libmono-addins-gui0.2-cil.installcligac,
+    debian/patches/fix_mono-addins-setup.pc.patch,
+    debian/patches/fix_mono-addins.pc.patch,
+    debian/patches/fix_mono-addins-gui.pc.patch:
+    + CLI Policy 0.7 install location
+  * debian/rules:
+    + Stop renaming pkg-config files to include ABI
+  * debian/control,
+    debian/rules:
+    + Use mono-csc from mono-devel 2.4.3
+
+ -- Jo Shields <directhex@apebox.org>  Tue, 08 Dec 2009 10:24:27 +0000
+
+mono-addins (0.4-5) unstable; urgency=medium
+
+  * debian/patches/fix_mono-addins-gui.pc.patch: Remove gnome-sharp-2.0
+    and glade-sharp-2.0 from Requires, as they were dropped by
+    upstream. (Closes: #513994)
+  * debian/control:
+    + Remove self from Uploaders.
+    + Add missing comma in B-D-I. Fixes FTBFS. (Closes: #536930)
+    + Bump Standards-Version to 3.8.2.
+    + Change Section to cli-mono.
+  * Set urgency to medium for RC bug fix.
+
+ -- Tim Retout <tim@retout.co.uk>  Tue, 11 Aug 2009 11:35:34 +0100
+
+mono-addins (0.4-4) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Mirco Bauer <meebey@debian.org>  Thu, 26 Feb 2009 00:50:58 +0100
+
+mono-addins (0.4-3) experimental; urgency=low
+
+  [ Mirco Bauer ]
+  * debian/patches/fix_ExtensionNodeChildAttribute_ctor_r127062.patch:
+    + Fixes InvalidCastException in applications using mono-addins
+      (like monodevelop).
+  * debian/libmono-addins0.2-cil.install
+    debian/libmono-addins0.2-cil.installcligac:
+    + Added Mono.Addins.CecilReflector library.
+
+  [ Tim Retout ]
+  * debian/libmono-addins0.2-cil.manpages: Use the version of the man page
+    from upstream.
+  * debian/mautil.1: Remove.
+
+ -- Mirco Bauer <meebey@debian.org>  Mon, 16 Feb 2009 21:56:52 +0100
+
+mono-addins (0.4-2) experimental; urgency=low
+
+  * debian/control:
+    + Dropped unneeded build-dep on libgnome2.0-cil.
+
+ -- Mirco Bauer <meebey@debian.org>  Mon, 02 Feb 2009 23:07:10 +0100
+
+mono-addins (0.4-1) experimental; urgency=low
+
+  [ Mirco Bauer ]
+  * New upstream release
+  * debian/rules:
+    + Bumped clilibs to >= 0.4.
+  * debian/patches/fix_addin_scan.patch:
+    + Removed, already applied upstream.
+  * debian/libmono-addins0.2-cil.install
+    debian/libmono-addins0.2-cil.installcligac
+    debian/libmono-addins-gui0.2-cil.install
+    debian/libmono-addins-gui0.2-cil.installcligac:
+    + Added GAC policy assemblies for 0.3.
+  * debian/control
+    debian/rules
+    debian/patches/*.dpatch
+    debian/patches/*.dpatch:
+    + Switched from dpatch to quilt.
+  * debian/control
+    debian/rules:
+    + Replaced mono-gac, mono-mcs and mono-1.0-devel with mono-devel for the
+      Mono 2.0 transition.
+    + Pass MCS variable to configure call.
+    + Added libmono-cairo2.0-cil to build-deps as required by Mono bug #425194.
+  * debian/control
+    debian/rules
+    debian/patches/99_autoreconf.dpatch:
+    + Replaced 99_autoreconf patch with autofoo commands.
+  * debian/control:
+    + Bumped Standards-Version to 3.8.0 (no changes needed)
+
+  [ Tim Retout ]
+  * debian/mautil.1, debian/libmono-addins0.2-cil.manpages:
+    + Add a manual page for mautil. (Closes: #480403)
+
+ -- Mirco Bauer <meebey@debian.org>  Sun, 01 Feb 2009 18:57:56 +0100
+
+mono-addins (0.3.1-5) unstable; urgency=medium
+
+  * debian/control:
+    + Manually depend on cli-common >= 0.5.4 as we use the policy-remove script
+      from it, which doesn't exist in older versions. (Closes: #471647)
+      (this fixes smooth upgrades, thus urgency set to medium)
+  * debian/watch:
+    + Updated
+
+ -- Mirco Bauer <meebey@debian.org>  Fri, 02 May 2008 17:58:04 +0200
+
+mono-addins (0.3.1-4) unstable; urgency=low
+
+  * debian/patches/fix_addin_scan.dpatch:
+    + Fix from upstream SVN for addin scan issue. (Closes: #459649)
+
+ -- Tim Retout <tim@retout.co.uk>  Thu, 20 Mar 2008 16:49:59 +0000
+
+mono-addins (0.3.1-3) unstable; urgency=low
+
+  * debian/rules:
+    + Fix substitution in pkg-config files to actually work.
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 03 Mar 2008 05:23:14 +0100
+
+mono-addins (0.3.1-2) unstable; urgency=low
+
+  * debian/patches/99_autoreconf.dpatch:
+    + Updated, debian/patches/fix_gac_policy_filenames.dpatch wasn't effective.
+      (Closes: #468869)
+
+ -- Mirco Bauer <meebey@debian.org>  Sun, 02 Mar 2008 02:36:43 +0100
+
+mono-addins (0.3.1-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/patches/fix_configure.ac.dpatch:
+    + Removed leading "./" from paths, config.status is confused by that,
+      fixing FTBFS. (Closes: #464298)
+  * debian/patches/99_autoreconf.dpatch:
+    + autoreconf needed for configure.ac change.
+  * debian/watch:
+    + Updated
+
+ -- Mirco Bauer <meebey@debian.org>  Sat, 01 Mar 2008 15:35:24 +0100
+
+mono-addins (0.3-2) unstable; urgency=low
+
+  * Users upgrading from mono-addins << 0.3-1 to 0.3.1 to 0.3-2 please read the
+    bugreport of #458443, as that contains info how to unbreak the
+    mono-gac / mono-addins upgrade!
+  * debian/control:
+    + Fixed typo in package short description. (Closes: #457205)
+  * debian/libmono-addins0.2-cil.postinst
+    debian/libmono-addins-gui0.2-cil.postinst:
+    + Remove left over GAC policy files, missed by cli-common(-dev) debhelper
+      maintainer script magic in 0.3~svn.r90520-1 to 0.3-1 upgrade caused by a
+      bug of dh_cligacpolicy in cli-common-dev << 0.5.4. (Closes: #458443)
+  * debian/libmono-addins0.2-cil.cligacpolicy
+    debian/libmono-addins-gui0.2-cil.cligacpolicy:
+    + Dropped, unused since 0.3-1.
+
+ -- Mirco Bauer <meebey@debian.org>  Tue, 01 Jan 2008 21:05:54 +0100
+
+mono-addins (0.3-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/watch:
+    + Updated
+  * debian/rules:
+    + Bumped clilibs to 0.3
+    + Don't run autogen.sh as we use a release tarball again.
+    + Don't generate GAC policy files using dh_cligacpolicy, as upstream ships
+      them now.
+    + Enhanced error handling for "make clean".
+  * debian/control:
+    + Added mono-1.0-devel to build-dependencies.
+    + Removed autoconf and libtool from build-dependencies, as they
+      are not needed anymore.
+      (but leaving automake as build-dep, as the build fails in some obscure
+      way otherwise)
+    + Changed Maintainer to Debian CLI Libraries Team.
+    + Updated Standards-Version to 3.7.3, no changes needed.
+  * debian/patches/fix_mono-addins-gui.pc.dpatch
+    debian/patches/fix_mono-addins.pc.dpatch
+    debian/patches/fix_mono-addins-setup.pc.dpatch:
+    + Updated
+  * debian/patches/fix_gac_policy_filenames.dpatch:
+    + All raw GAC policy files were named without the assembly name component
+      (policy.0.2.config), fixed.
+  * debian/libmono-addins0.2-cil.install
+    debian/libmono-addins-gui0.2-cil.install:
+    + Updated paths, upstream changed the directory layout.
+    + Added GAC policy files provided by upstream now.
+  * debian/libmono-addins0.2-cil.installcligac
+    debian/libmono-addins-gui0.2-cil.installcligac:
+    + Added GAC policy files.
+
+ -- Mirco Bauer <meebey@debian.org>  Sun, 30 Dec 2007 17:08:42 +0100
+
+mono-addins (0.3~svn.r90520-1) unstable; urgency=low
+
+  * New subversion snapshot
+  * debian/patches/make_Mono.Addins.Gui.AddinTreeWidget_public:
+    + Removed, already applied upstream.
+  * debian/control:
+    + Added automake, autoconf and libtool to build-dependencies, as we are
+      packaging a snapshot now.
+    + Updated cli-common-dev build-dependency to >= 0.5.0, as we use
+      dh_cligacpolicy now for managing the policy files.
+    + Moved homepage URL from package description to Homepage field.
+    + Added Vcs-Svn and Vcs-Browser fields.
+  * debian/rules:
+    + Bumped clilibs to 0.3~svn.r90520.
+    + Run ./autogen.sh before /configure.
+    + Add API version number to pkg-config file names, as required by the
+      CLI Policy.
+  * debian/libmono-addins0.2-cil.links
+    debian/libmono-addins-gui0.2-cil.links:
+    + Unversioned symlinks to the versioned pkg-config files.
+
+ -- Mirco Bauer <meebey@debian.org>  Sun, 02 Dec 2007 15:14:44 +0100
+
+mono-addins (0.2-4) unstable; urgency=low
+
+  * Mirco 'meebey Bauer:
+    + debian/rules:
+      - Bumped clilibs to 0.2-4.
+    + debian/patches/fix_mono-addins.pc.dpatch
+      debian/patches/fix_mono-addins-gui.pc.dpatch
+      debian/patches/fix_mono-addins-setup.pc.dpatch:
+      - Fixed paths, Requires fields and bumped Version to 0.2.1
+
+ -- Mirco Bauer <meebey@debian.org>  Sat, 22 Sep 2007 00:19:53 +0200
+
+mono-addins (0.2-3) unstable; urgency=low
+
+  * Mirco 'meebey Bauer:
+    + debian/rules:
+      - Bumped clilibs to 0.2-3.
+    + debian/patches/make_Mono.Addins.Gui.AddinTreeWidget_public.dpatch:
+      - Made AddinTreeWidget class public, tomboy needs it.
+
+ -- Mirco Bauer <meebey@debian.org>  Thu, 20 Sep 2007 21:44:06 +0200
+
+mono-addins (0.2-2) unstable; urgency=low
+
+  * Mirco 'meebey Bauer:
+    + Added missing Debian changelog to binary packages.
+
+ -- Mirco Bauer <meebey@debian.org>  Sat, 14 Jul 2007 12:07:48 +0200
+
+mono-addins (0.2-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Mirco Bauer <meebey@debian.org>  Sat, 07 Jul 2007 11:06:11 +0200

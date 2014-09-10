@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+export MONO_SHARED_DIR=$(CURDIR)
+
+DEB_CLI_ABI_VERSION=0.2
+DEB_CLI_API_VERSION=1.0
+
+MAKEFILE = $(firstword $(MAKEFILE_LIST))
+DEBIAN_DIR = $(dir $(MAKEFILE))
+SOURCE_DIR = $(DEBIAN_DIR)/..
+
+DEB_VERSION = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Version | cut -d" " -f2)
+DEB_SOURCE_NAME = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Source | cut -d" " -f2)
+VERSION = $(shell echo $(DEB_VERSION) | cut -d"-" -f1)
+
+override_dh_auto_configure:
+	dh_auto_configure -- --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info --enable-tests=no MCS=/usr/bin/mono-csc
+
+override_dh_install:
+	perl -pe 's/#PACKAGE_ABI_VERSION#/$(DEB_CLI_ABI_VERSION)/g' -i \
+	  $(CURDIR)/debian/tmp/usr/lib/pkgconfig/*.pc
+	dh_install
+
+override_dh_makeclilibs:
+	dh_makeclilibs -i -m $(DEB_CLI_API_VERSION)
+
+get-orig-source:
+	uscan \
+		--package $(DEB_SOURCE_NAME) \
+		--watchfile $(DEBIAN_DIR)/watch \
+		--upstream-version $(VERSION) \
+		--download-version $(VERSION) \
+		--destdir . \
+		--force-download \
+		--rename \
+		--repack
+
+%:
+	dh $@ --with autoreconf,cli

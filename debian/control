@@ -1,0 +1,130 @@
+Source: mono-addins
+Section: cli-mono
+Priority: optional
+Maintainer: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
+Uploaders: Mirco Bauer <meebey@debian.org>, Sebastian Dröge <slomo@debian.org>
+Build-Depends: debhelper (>= 7.0.50~), dh-autoreconf
+Build-Depends-Indep: cli-common-dev (>= 0.5.4),
+ pkg-config,
+ mono-devel (>= 2.8),
+ libglib2.0-cil-dev,
+ libgtk2.0-cil-dev
+Standards-Version: 3.9.2
+Homepage: http://www.mono-project.com/Mono.Addins
+Vcs-Git: git://git.debian.org/pkg-cli-libs/packages/mono-addins.git
+Vcs-Browser: http://git.debian.org/?p=pkg-cli-libs/packages/mono-addins.git;a=summary
+
+Package: libmono-addins0.2-cil
+Architecture: all
+Depends: ${cli:Depends}, ${misc:Depends}, cli-common (>= 0.5.4)
+Description: addin framework for extensible CLI applications/libraries
+ Mono.Addins is a framework for creating extensible CLI applications, and for
+ creating libraries which extend those applications.
+ Mono.Addins has been designed to be easy to use and useful for a wide range
+ of applications: from simple applications with small extensibility needs, to
+ complex applications which need support for large add-in structures.
+ .
+ This new framework intends to set an standard for building extensible
+ applications and add-ins in Mono. 
+ .
+ This package contains the Mono.Addins assemblies.
+
+Package: libmono-addins-cil-dev
+Architecture: all
+Depends: libmono-addins0.2-cil (= ${binary:Version}), ${misc:Depends}
+Replaces: libmono-addins0.2-cil (<< 0.4-6)
+Description: addin framework for extensible CLI applications/libraries
+ Mono.Addins is a framework for creating extensible CLI applications, and for
+ creating libraries which extend those applications.
+ Mono.Addins has been designed to be easy to use and useful for a wide range
+ of applications: from simple applications with small extensibility needs, to
+ complex applications which need support for large add-in structures.
+ .
+ This new framework intends to set an standard for building extensible
+ applications and add-ins in Mono.
+ .
+ This package contains development files related to the Mono.Addins library,
+ and should be used for compilation.
+
+Package: libmono-addins-gui0.2-cil
+Architecture: all
+Depends: ${cli:Depends}, ${misc:Depends}, cli-common (>= 0.5.4)
+Description: GTK# frontend library for Mono.Addins
+ Mono.Addins is a framework for creating extensible CLI applications, and for
+ creating libraries which extend those applications.
+ Mono.Addins has been designed to be easy to use and useful for a wide range
+ of applications: from simple applications with small extensibility needs, to
+ complex applications which need support for large add-in structures.
+ .
+ This package contains a GTK# frontend library for the Mono.Addins.Setup
+ library.
+ .
+ This package contains the Mono.Addins.Gui library.
+
+Package: libmono-addins-gui-cil-dev
+Architecture: all
+Depends: libmono-addins-gui0.2-cil (= ${binary:Version}),
+ libmono-addins-cil-dev (= ${binary:Version}),
+ libgtk2.0-cil-dev,
+ ${misc:Depends}
+Replaces: libmono-addins-gui0.2-cil (<< 0.4-6)
+Description: GTK# frontend library for Mono.Addins
+ Mono.Addins is a framework for creating extensible CLI applications, and for
+ creating libraries which extend those applications.
+ Mono.Addins has been designed to be easy to use and useful for a wide range
+ of applications: from simple applications with small extensibility needs, to
+ complex applications which need support for large add-in structures.
+ .
+ This package contains a GTK# frontend library for the Mono.Addins.Setup
+ library.
+ .
+ This package contains development files relating to the Mono.Addins.Gui
+ library, and should be used for compilation.
+
+Package: libmono-addins-msbuild0.2-cil
+Architecture: all
+Depends: ${cli:Depends}, ${misc:Depends}, cli-common (>= 0.5.4)
+Description: MSBuild task library for Mono.Addins
+ Mono.Addins is a framework for creating extensible CLI applications, and for
+ creating libraries which extend those applications.
+ Mono.Addins has been designed to be easy to use and useful for a wide range
+ of applications: from simple applications with small extensibility needs, to
+ complex applications which need support for large add-in structures.
+ .
+ This package contains a MSBuild task library for the Mono.Addins
+ library.
+ .
+ This package contains the Mono.Addins.MSBuild library.
+
+Package: libmono-addins-msbuild-cil-dev
+Architecture: all
+Depends: libmono-addins-msbuild0.2-cil (= ${binary:Version}),
+ libmono-addins-cil-dev (= ${binary:Version}),
+ ${misc:Depends}
+Description: MSBuild task library for Mono.Addins
+ Mono.Addins is a framework for creating extensible CLI applications, and for
+ creating libraries which extend those applications.
+ Mono.Addins has been designed to be easy to use and useful for a wide range
+ of applications: from simple applications with small extensibility needs, to
+ complex applications which need support for large add-in structures.
+ .
+ This package contains a MSBuild task library for the Mono.Addins
+ library.
+ .
+ This package contains development files relating to the Mono.Addins.MSBuild
+ library, and should be used for compilation.
+
+Package: mono-addins-utils
+Architecture: all
+Depends: ${cli:Depends}, ${misc:Depends}
+Conflicts: libmono-addins0.2-cil (<< 0.4-6)
+Replaces: libmono-addins0.2-cil (<< 0.4-6)
+Description: Command-line utility for Mono.Addins management
+ Mono.Addins is a framework for creating extensible CLI applications, and for
+ creating libraries which extend those applications.
+ Mono.Addins has been designed to be easy to use and useful for a wide range
+ of applications: from simple applications with small extensibility needs, to
+ complex applications which need support for large add-in structures.
+ .
+ This package contains a command-line utility to easily manipulate Mono.Addins
+ registries provided by other software (including user-written applications).
